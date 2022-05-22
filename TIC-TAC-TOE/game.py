@@ -23,7 +23,7 @@ class TicTacToe():
     def empty_squares(self):
         return " " in self.board
 
-    def non_empty_squares(self):
+    def num_empty_squares(self):
         # return len(self.available_move)
         return self.board.count(' ')
 
@@ -81,7 +81,7 @@ def play( game, x_player, o_player, print_game= True):
         #let define a function to make a move!
         if game.make_move(square, letter):
             if print_game:
-                print(letter + f"make a move to square {square}")
+                print(letter + f"\t make a move to square {square}")
                 game.print_board()
                 print(" ")
 
@@ -101,6 +101,6 @@ def play( game, x_player, o_player, print_game= True):
 
 if __name__ =='__main__':
     x_player = HumanPlayer("X")
-    o_player = RandomComputerPlayer("O")
+    o_player = GeniusComputerPlayer("O")
     t = TicTacToe()
     play(t, x_player, o_player, print_game= True)
